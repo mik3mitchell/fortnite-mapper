@@ -1,0 +1,235 @@
+/* ==========================================================================
+MITCHELL WEB DEV MAIN STYLESHEET
+========================================================================== */
+
+
+/* ==========================================================================
+Table of Contents:
+
+1. EXTERNAL RESOURCES
+2. BASE STYLES
+3. MAIN NAVIGATION
+4. BUTTONS
+5. BODY
+6. MOBILE MEDIA QUERIES
+7. ADDITIONAL CUSTOM STYLES
+========================================================================== */
+
+
+/* ==========================================================================
+1. EXTERNAL RESOURCES                                            
+========================================================================== */
+
+/* =============== @import, @font-face, and CSS File Includes =============== */
+
+@import url("https://use.typekit.net/rua6kda.css");
+
+/* ==========================================================================
+2. BASE STYLES                                             
+========================================================================== */
+
+/* =============== Base =============== */
+
+*, *:before, *:after {
+    -moz-box-sizing: border-box; 
+    -webkit-box-sizing: border-box; 
+    box-sizing: border-box;
+}
+
+html, body {
+    min-height: 100%;
+    margin: 0;
+    padding: 0;
+} 
+
+body {
+    background: #fff;
+    color: #595959;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 1.64em;
+    background:#243441;
+    height: 2000px;
+}
+
+/* =============== Typography =============== */
+
+/* Proxima Nova Bold
+font-family: proxima-nova, sans-serif;
+font-weight: 100, 300, 400, 500;
+font-style: normal;
+
+/* Headings */
+
+/* Basic text */
+
+/* Anchor Links */
+
+/* Lists */
+
+/* Block Quotes */
+
+
+/* ==========================================================================
+3. MAIN NAVIGATION                                            
+========================================================================== */
+
+
+
+/* =============== Custom Menu Primary =============== */
+
+header {
+  height: 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 10%;
+}
+
+header li,
+header a {
+  font-family: proxima-nova, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 1.2rem;
+  color: #fff;
+  text-decoration: none;
+  list-style: none;
+}
+
+header a.cta button {
+  background: none;
+  font-family: proxima-nova, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 1rem;
+  color: #56CCF2;
+  text-decoration: none;
+  list-style: none;
+  padding: 5px 10px;
+  border-color: #56CCF2 !important;
+  border-width: 2px;
+  border-radius: 5px;
+}
+
+header a.cta button:hover {
+  box-shadow: 0 0 15px #2196f3; 
+  text-shadow: 0 0 5px #2196f3;
+}
+
+.nav-links li {
+  display: inline-block;
+  margin: 0 15px;
+}
+
+img.logo {
+  display: inline-block;
+  height: 70%;
+  width: auto;
+}
+
+/* =============== Mobile Toggle Menu =============== */
+
+/* =============== Fixed Sidebars =============== */
+
+#sidebar-social {
+  height: 80%;
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+    align-items: center;
+    justify-content: center; 
+  right: 100px;
+}
+
+#sidebar-social ul {
+  margin: 0;
+  padding: 0;
+  display: block;
+  position: absolute;
+}
+
+#sidebar-social ul li {
+  list-style: none;
+  margin: 15px 0;
+}
+
+#sidebar-social ul a {
+  position: relative;
+  display: block;
+  width: 45px;
+  height: 45px;
+  text-align: center;
+  line-height: 50px;
+  background: #E0E5EC;
+  border-radius: 50%;
+  font-size: 25px;
+  color: #243441;
+  transition: .5s;
+}
+
+.i-big {
+  font-size: 30px !important;
+  line-height: 46px;
+}
+
+#sidebar-social ul li a:hover {
+  color: #2196f3;
+  box-shadow: 0 0 15px #2196f3; 
+  text-shadow: 0 0 5px #2196f3;
+}
+
+
+/* ==========================================================================
+4. BUTTONS                                        
+========================================================================== */
+
+
+/* ==========================================================================
+5. BODY                                     
+========================================================================== */
+
+
+/* ==========================================================================
+6. MOBILE MEDIA QUERIES                                  
+========================================================================== */
+
+
+/* ==========================================================================
+7. ADDITIONAL CUSTOM STYLES                       
+========================================================================== */
+
+
+
+
+*, *:before, *:after {
+  -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
+}
+
+html, body {
+  min-height: 100%;
+  margin: 0;
+  padding: 0;
+} 
+
+.div1 {
+    height: 500px;
+    width: 100%;
+    background: blue;
+}
+
+ .slant-bottom {
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%);
+  clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%);
+}
+
+ .slant-top {
+  -webkit-clip-path: polygon(0 20%, 100% 0, 100% 100%, 0 100%);
+  clip-path: polygon(0 20%, 100% 0, 100% 100%, 0 100%);
+}
+
+.slant-top-bottom {
+  -webkit-clip-path: polygon(0 20%, 100% 0, 100% 80%, 0 100%);
+  clip-path: polygon(0 20%, 100% 0, 100% 80%, 0 100%);
+}
