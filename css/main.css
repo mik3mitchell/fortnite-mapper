@@ -199,7 +199,8 @@ body {
 button,
 input[type="submit"],
 input[type="reset"],
-input[type="button"] {
+input[type="button"],
+a.clear-btn.desktop {
   display: inline-block;
   height: 38px;
   padding: 0 30px;
@@ -226,7 +227,9 @@ input[type="button"] {
   input[type="reset"]:active,
   input[type="reset"]:focus,
   input[type="button"]:active,
-  input[type="button"]:focus {
+  input[type="button"]:focus,
+  a.clear-btn.desktop:active,
+  a.clear-btn.desktop:focus {
     color: #bbb;
     border-color: #bbb;
     outline: 0; }
@@ -234,10 +237,43 @@ input[type="button"] {
   button:hover,
   input[type="submit"]:hover,
   input[type="reset"]:hover,
-  input[type="button"]:hover {
+  input[type="button"]:hover,
+  a.clear-btn.desktop:hover {
     color: #31e8ff;
     border-color: #31e8ff;
     outline: 0; }
+  @media (max-width: 1400px) {
+    .button,
+    button,
+    input[type="submit"],
+    input[type="reset"],
+    input[type="button"],
+    a.clear-btn.desktop {
+      padding: 0 20px; } }
+  @media (max-width: 630px) {
+    .button,
+    button,
+    input[type="submit"],
+    input[type="reset"],
+    input[type="button"],
+    a.clear-btn.desktop {
+      height: 38px;
+      padding: 0 10px;
+      margin: 0 10px !important;
+      font-size: 14px;
+      line-height: 20px; } }
+  @media (max-width: 576px) {
+    .button,
+    button,
+    input[type="submit"],
+    input[type="reset"],
+    input[type="button"],
+    a.clear-btn.desktop {
+      height: 30px;
+      padding: 0 7px;
+      margin: 0 7px !important;
+      font-size: 14px;
+      line-height: 20px; } }
 
 ::root {
   font-size: 16px; }
@@ -259,24 +295,57 @@ h1, h2, h3, h4, h5, h6 {
 h1 {
   font-size: 2rem;
   color: #31e8ff; }
+  @media (max-width: 768px) {
+    h1 {
+      font-size: 1.2rem; } }
+  @media (max-width: 576px) {
+    h1 {
+      font-size: 1rem; } }
 
 a {
   color: #bbb; }
   a:hover {
     color: #31e8ff; }
 
+.wrapper {
+  display: flex;
+  height: 100vh; }
+  @media (max-width: 630px) {
+    .wrapper {
+      flex-wrap: wrap;
+      height: auto; } }
+
 .navbar {
   width: 18%;
-  height: 100vh;
-  position: fixed;
   padding: 3rem;
   background-color: #2E2E2E;
   margin: 0 auto;
   text-align: center;
   color: #fff; }
+  @media (max-width: 768px) {
+    .navbar {
+      padding: 2rem 0rem; } }
+  @media (max-width: 630px) {
+    .navbar {
+      width: 100%;
+      padding: 1rem 0; }
+      .navbar .nav-content {
+        width: 100%;
+        display: flex; }
+        .navbar .nav-content > div {
+          width: 50%;
+          display: flex; } }
 
 .logo svg {
   height: 5rem; }
+  @media (max-width: 630px) {
+    .logo svg {
+      height: 3rem;
+      margin: 0 20px; } }
+  @media (max-width: 576px) {
+    .logo svg {
+      height: 2.5rem;
+      margin: 0 10px; } }
 
 .navbar .icon path {
   fill: transparent;
@@ -307,33 +376,102 @@ main {
   display: -ms-flexbox;
   display: -webkit-flex;
   display: flex;
+  flex: 1;
   align-items: center;
   justify-content: center;
   width: calc(100%-24.2%);
-  height: 100vh;
-  padding-left: 24.2%;
+  padding-left: 12.1%;
+  padding-right: 12.1%;
   background: url(../img/main_background.jpg) no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover; }
+  @media (max-width: 1200px) {
+    main {
+      padding-left: 5%;
+      padding-right: 5%; } }
+  @media (max-width: 992px) {
+    main {
+      padding-left: 3%;
+      padding-right: 3%; } }
+  @media (max-width: 630px) {
+    main {
+      padding-top: 40px;
+      padding-bottom: 40px; } }
 
 .marker-size,
 .map-clear {
   margin-bottom: 50px; }
+  @media (max-width: 630px) {
+    .marker-size,
+    .map-clear {
+      margin-bottom: 0; } }
+
+i.fa-map-marker-alt-slash {
+  font-size: 2.5rem; }
+  @media (max-width: 576px) {
+    i.fa-map-marker-alt-slash {
+      font-size: 2.1rem; } }
 
 .map-functions {
   padding-top: 10px; }
   .map-functions h3 {
     color: #fff; }
+    @media (max-width: 768px) {
+      .map-functions h3 {
+        display: none; } }
+  @media (max-width: 992px) {
+    .map-functions button#increaseButton {
+      margin-top: 20px; } }
 
 #map-area {
-  -webkit-background-size: 44rem;
-  -moz-background-size: 44rem;
-  -o-background-size: 44rem;
-  background-size: 44rem;
-  height: 44rem;
-  width: 44rem; }
+  -webkit-background-size: 55rem;
+  -moz-background-size: 55rem;
+  -o-background-size: 55rem;
+  background-size: 55rem;
+  height: 55rem;
+  width: 55rem; }
+  @media (max-width: 1600px) {
+    #map-area {
+      -webkit-background-size: 44rem;
+      -moz-background-size: 44rem;
+      -o-background-size: 44rem;
+      background-size: 44rem;
+      height: 44rem;
+      width: 44rem; } }
+  @media (max-width: 1200px) {
+    #map-area {
+      -webkit-background-size: 39rem;
+      -moz-background-size: 39rem;
+      -o-background-size: 39rem;
+      background-size: 39rem;
+      height: 39rem;
+      width: 39rem; } }
+  @media (max-width: 992px) {
+    #map-area {
+      -webkit-background-size: 31rem;
+      -moz-background-size: 31rem;
+      -o-background-size: 31rem;
+      background-size: 31rem;
+      height: 31rem;
+      width: 31rem; } }
+  @media (max-width: 630px) {
+    #map-area {
+      -webkit-background-size: 25rem;
+      -moz-background-size: 25rem;
+      -o-background-size: 25rem;
+      background-size: 25rem;
+      height: 25rem;
+      width: 25rem; } }
+  @media (max-width: 576px) {
+    #map-area {
+      -webkit-background-size: 20rem;
+      -moz-background-size: 20rem;
+      -o-background-size: 20rem;
+      background-size: 20rem;
+      height: 20rem;
+      width: 20rem; } }
 
 .fortnite-map {
   background: url(../img/fortnite_map.jpg); }
@@ -350,11 +488,24 @@ div.marker {
 
 .map-toggle svg {
   height: 8rem; }
+  @media (max-width: 768px) {
+    .map-toggle svg {
+      height: 5rem; } }
+  @media (max-width: 630px) {
+    .map-toggle svg {
+      height: 2.8rem;
+      margin-left: 15px; } }
+  @media (max-width: 576px) {
+    .map-toggle svg {
+      height: 2.2rem; } }
 
 .map-toggle path {
   fill: transparent;
   stroke-width: 6;
   stroke: #bbb; }
+  @media (max-width: 630px) {
+    .map-toggle path {
+      stroke-width: 11; } }
 
 .map-toggle .btnMapToggle path {
   stroke-dasharray: 925;
@@ -373,5 +524,35 @@ div.marker {
   100% {
     stroke-dashoffset: 1850;
     stroke: #31e8ff; } }
+footer {
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+  background-color: #2E2E2E;
+  text-align: center;
+  padding: 25px 50px 10px;
+  color: #bbb; }
+  footer .social {
+    margin-bottom: 20px; }
+    footer .social .fa-instagram,
+    footer .social .fa-twitter {
+      font-size: 2rem;
+      margin: 0 1rem; }
+
+.epic-disclaimer {
+  font-size: 0.8rem; }
+
+.desktop {
+  display: inline-block; }
+  @media (max-width: 992px) {
+    .desktop {
+      display: none !important; } }
+
+.mobile {
+  display: none; }
+  @media (max-width: 992px) {
+    .mobile {
+      display: inline-block; } }
 
 /*# sourceMappingURL=main.css.map */

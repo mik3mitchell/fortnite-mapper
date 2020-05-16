@@ -43,6 +43,12 @@ h1
   font-size: 2rem
   color: $turquoise
 
+  @include breakpoint(small-device)
+    font-size: 1.2rem
+
+  @include breakpoint(tiny-device)
+    font-size: 1rem
+
 a 
   color: #bbb
   &:hover
@@ -60,18 +66,49 @@ a
 
 // =============== Fixed Sidebars ===============
 
+.wrapper
+  display: flex
+  height: 100vh
+
+  @include breakpoint(xsmall-device)
+    flex-wrap: wrap
+    height: auto
+  
 .navbar
   width: 18%
-  height: 100vh
-  position: fixed
+  // height: 100vh
+  // position: fixed
   padding: 3rem
   background-color: $night-rider
   margin: 0 auto
   text-align: center
   color: #fff
 
+  @include breakpoint(small-device)
+    padding: 2rem 0rem
+
+  @include breakpoint(xsmall-device)
+    width: 100%
+    padding: 1rem 0
+
+    .nav-content 
+      width: 100%
+      display: flex
+
+      > div
+        width: 50%
+        display: flex
+
 .logo svg
   height: 5rem
+
+  @include breakpoint(xsmall-device)
+    height: 3rem
+    margin: 0 20px
+
+  @include breakpoint(tiny-device)
+    height: 2.5rem
+    margin: 0 10px
 
 .navbar .icon path
   fill: transparent
@@ -108,20 +145,43 @@ main
   display: -ms-flexbox
   display: -webkit-flex
   display: flex
+  flex: 1
   align-items: center
   justify-content: center
   width: calc(100%-24.2%)
-  height: 100vh
-  padding-left: 24.2%
+  // height: 100vh
+  padding-left: 12.1%
+  padding-right: 12.1%
   background: url(../img/main_background.jpg) no-repeat center center fixed
   -webkit-background-size: cover
   -moz-background-size: cover
   -o-background-size: cover
   background-size: cover
+
+  @include breakpoint(large-device) 
+    padding-left: 5%
+    padding-right: 5%
+
+  @include breakpoint(medium-device) 
+    padding-left: 3%
+    padding-right: 3%
+
+  @include breakpoint(xsmall-device)
+    padding-top: 40px
+    padding-bottom: 40px
   
 .marker-size,
 .map-clear
   margin-bottom: 50px
+
+  @include breakpoint(xsmall-device)
+    margin-bottom: 0
+
+i.fa-map-marker-alt-slash
+  font-size: 2.5rem
+
+  @include breakpoint(tiny-device)
+    font-size: 2.1rem
 
 .map-functions 
   padding-top: 10px
@@ -129,16 +189,63 @@ main
   & h3
     color: #fff
 
+    @include breakpoint(small-device)
+      display: none
+
+  button#increaseButton
+    @include breakpoint(medium-device)
+      margin-top: 20px
+
 // TOP BAR
 
 // MAP AREA
 #map-area 
-  -webkit-background-size: 44rem
-  -moz-background-size: 44rem
-  -o-background-size: 44rem
-  background-size: 44rem
-  height: 44rem
-  width: 44rem
+  -webkit-background-size: 55rem
+  -moz-background-size: 55rem
+  -o-background-size: 55rem
+  background-size: 55rem
+  height: 55rem
+  width: 55rem
+
+  @include breakpoint(large-screen) 
+    -webkit-background-size: 44rem
+    -moz-background-size: 44rem
+    -o-background-size: 44rem
+    background-size: 44rem
+    height: 44rem
+    width: 44rem
+
+  @include breakpoint(large-device) 
+    -webkit-background-size: 39rem
+    -moz-background-size: 39rem
+    -o-background-size: 39rem
+    background-size: 39rem
+    height: 39rem
+    width: 39rem
+
+  @include breakpoint(medium-device) 
+    -webkit-background-size: 31rem
+    -moz-background-size: 31rem
+    -o-background-size: 31rem
+    background-size: 31rem
+    height: 31rem
+    width: 31rem
+
+  @include breakpoint(xsmall-device) 
+    -webkit-background-size: 25rem
+    -moz-background-size: 25rem
+    -o-background-size: 25rem
+    background-size: 25rem
+    height: 25rem
+    width: 25rem
+
+  @include breakpoint(tiny-device) 
+    -webkit-background-size: 20rem
+    -moz-background-size: 20rem
+    -o-background-size: 20rem
+    background-size: 20rem
+    height: 20rem
+    width: 20rem
 
 .fortnite-map
   background: url(../img/fortnite_map.jpg)
@@ -158,10 +265,23 @@ div.marker
 .map-toggle svg
   height: 8rem
 
+  @include breakpoint(small-device)
+    height: 5rem
+
+  @include breakpoint(xsmall-device)
+    height: 2.8rem
+    margin-left: 15px
+
+  @include breakpoint(tiny-device)
+    height: 2.2rem
+
 .map-toggle path
   fill: transparent
   stroke-width: 6
   stroke: #bbb
+
+  @include breakpoint(xsmall-device)
+    stroke-width: 11
 
 .map-toggle .btnMapToggle path
   stroke-dasharray: 925
@@ -181,6 +301,42 @@ div.marker
     stroke-dashoffset: 1850
     stroke: $turquoise
 
+//Footer 
+
+footer
+  display: flex
+  flex: 1
+  justify-content: center
+  align-items: center
+  background-color: $night-rider
+  text-align: center
+  padding: 25px 50px 10px
+  color: #bbb
+
+  .social
+    margin-bottom: 20px
+
+    .fa-instagram,
+    .fa-twitter
+      font-size: 2rem
+      margin: 0 1rem
+
+.epic-disclaimer
+  font-size: .8rem
+
+// mobile
+
+.desktop
+  display: inline-block
+
+  @include breakpoint(medium-device)
+    display: none !important
+
+.mobile
+  display: none
+
+  @include breakpoint(medium-device)
+    display: inline-block
 
 
 // ==========================================================================
